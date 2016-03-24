@@ -34,11 +34,14 @@ namespace TextureStitcher
 					try {
 						var bmp = new Bitmap(f);
 						bmList.Add(bmp);
+						
+						classtext += "\tpublic static TextureRegion " + Path.GetFileNameWithoutExtension(f) + " = new TextureRegion{name = \"" + Path.GetFileNameWithoutExtension(f) + "\", x = " + totalWidth + ", y = 0, width = " + bmp.Width + ", height = " + bmp.Height + "};\r\n";
+
 						totalWidth += bmp.Width;
 						maxHeight = Math.Max(maxHeight, bmp.Height);
 						print(Path.GetFileName(f), ConsoleColor.Green);
 
-						classtext += "\tpublic static TextureRegion " + Path.GetFileNameWithoutExtension(f) + " = new TextureRegion{name = \"" + Path.GetFileNameWithoutExtension(f) + "\", x = "+ totalWidth +", y = 0, width = " + bmp.Width + ", height = " + bmp.Height + "};\r\n";
+						
 					}
 					catch (Exception e) {
 						print("File is not a bitmap: " + Path.GetFileName(f), ConsoleColor.Red);
