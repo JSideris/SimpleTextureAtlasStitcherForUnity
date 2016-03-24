@@ -1,0 +1,5 @@
+C:\Users\Sideris\Documents\GitHub\SimpleTextureAtlasStitcherForUnity\TextureStitcher\bin\Release\TextureStitcher.exe.config
+C:\Users\Sideris\Documents\GitHub\SimpleTextureAtlasStitcherForUnity\TextureStitcher\bin\Release\TextureStitcher.exe
+C:\Users\Sideris\Documents\GitHub\SimpleTextureAtlasStitcherForUnity\TextureStitcher\bin\Release\TextureStitcher.pdb
+C:\Users\Sideris\Documents\GitHub\SimpleTextureAtlasStitcherForUnity\TextureStitcher\obj\Release\TextureStitcher.exe
+C:\Users\Sideris\Documents\GitHub\SimpleTextureAtlasStitcherForUnity\TextureStitcher\obj\Release\TextureStitcher.pdb
