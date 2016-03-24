@@ -1,5 +1,0 @@
-C:\depot\JSideris\TextureStitcher\TextureStitcher\bin\Release\TextureStitcher.exe.config
-C:\depot\JSideris\TextureStitcher\TextureStitcher\bin\Release\TextureStitcher.exe
-C:\depot\JSideris\TextureStitcher\TextureStitcher\bin\Release\TextureStitcher.pdb
-C:\depot\JSideris\TextureStitcher\TextureStitcher\obj\Release\TextureStitcher.exe
-C:\depot\JSideris\TextureStitcher\TextureStitcher\obj\Release\TextureStitcher.pdb
