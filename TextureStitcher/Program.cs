@@ -14,7 +14,16 @@ namespace TextureStitcher
 		//TODO: use args to add more functionality.
 		static void Main(string[] args)
 		{
-			string classtext = "public class TextureRegion\r\n{\r\n\tpublic string name;\r\n\tpublic int x;\r\n\tpublic int y;\r\n\tpublic int width;\r\n\tpublic int height;\r\n}\r\n\r\n"
+			string classtext = "public class TextureRegion\r\n{\r\n\tpublic string name;\r\n"
+				+ "\tpublic int x;\r\n" 
+				+ "\tpublic int y;\r\n"
+				+ "\tpublic int width;\r\n"
+				+ "\tpublic int height;\r\n"
+				+ "\tpublic float u1 { get { return (float)x / TextureAtlas.totalWidth; } }\r\n"
+				+ "\tpublic float u2 { get { return (float)(x + width) / TextureAtlas.totalWidth; } }\r\n"
+				+ "\tpublic float v1 { get { return (float)y / TextureAtlas.totalHeight; } }\r\n"
+				+ "\tpublic float v2 { get { return (float)(y + height) / TextureAtlas.totalHeight; } }\r\n"
+				+ "}\r\n\r\n"
 				+ "public static class TextureAtlas\r\n{\r\n";
 			Console.ForegroundColor = ConsoleColor.White;
 			print("Texture folder path?: ");
@@ -35,7 +44,7 @@ namespace TextureStitcher
 						var bmp = new Bitmap(f);
 						bmList.Add(bmp);
 						
-						classtext += "\tpublic static TextureRegion " + Path.GetFileNameWithoutExtension(f) + " = new TextureRegion{name = \"" + Path.GetFileNameWithoutExtension(f) + "\", x = " + totalWidth + ", y = 0, width = " + bmp.Width + ", height = " + bmp.Height + "};\r\n";
+						classtext += "\tpublic static TextureRegion " + Path.GetFileNameWithoutExtension(f) + " = new TextureRegion{x = " + totalWidth + ", y = 0, width = " + bmp.Width + ", height = " + bmp.Height + "};\r\n";
 
 						totalWidth += bmp.Width;
 						maxHeight = Math.Max(maxHeight, bmp.Height);
@@ -48,6 +57,9 @@ namespace TextureStitcher
 					}
 				}
 
+				classtext += "\r\n" 
+					+ "\tpublic static int totalWidth = " + totalWidth + ";\r\n" 
+					+ "\tpublic static int totalHeight = " + maxHeight + ";\r\n";
 				classtext += "}";
 
 				print();
